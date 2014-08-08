@@ -1,0 +1,7 @@
+<h1>Edit Review for <%= link_to(@movie.title, @movie) %></h1>
+
+<%= render 'form' %>
+
+<p>
+	<%= link_to("Delete", movie_review_path(@movie, @review), method: :delete, confirm: "Are you sure?") %>
+</p>
