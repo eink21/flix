@@ -13,7 +13,7 @@ describe "Creating a new movie", type: :feature do
     fill_in "Cast", with: "The award-winning cast"
     fill_in "Director", with: "The ever-creative director"
     fill_in "Duration", with: "123 min"
-    fill_in "Image file name", with: "movie.png" 
+    attach_file "Image", "#{Rails.root}/app/assets/images/ironman.jpg"
     click_button 'Create Movie'
     expect(current_path).to eq(movie_path(Movie.last))   
     expect(page).to have_text('New Movie Title')

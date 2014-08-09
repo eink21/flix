@@ -13,6 +13,10 @@ group :production do
 	gem 'pg'
 end
 
+# For getting image uploads to work...
+gem 'paperclip'
+gem 'aws-sdk'
+
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 4.0.2' #original
 gem 'sass-rails', '~> 4.0.3' #me

@@ -98,24 +98,6 @@ RSpec.describe Movie, type: :model do
     expect(movie.errors[:total_gross].any?).to be true
   end
 
-  it "accepts properly-formatted image file names" do 
-    file_names = %w[a.jpg b.GIF c.PNG]
-    file_names.each do |file_name|
-      movie = Movie.new(image_file_name: file_name)
-      movie.valid?
-      expect(movie.errors[:image_file_name].any?).to be false
-    end
-  end
-
-  it "rejects improperly formatted image file names" do
-    file_names = %w[movie .jpg .png .gif movie.pdf movie.doc]
-    file_names.each do |file_name|
-      movie = Movie.new(image_file_name: file_name)
-      movie.valid?
-      expect(movie.errors[:image_file_name].any?).to be true
-    end
-  end
-
   it "accepts any rating that is in an approved list" do
     ratings = %w[G PG PG-13 R NC-17]
     ratings.each do |rating|

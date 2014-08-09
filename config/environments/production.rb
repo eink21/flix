@@ -1,4 +1,14 @@
 Flix::Application.configure do
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :url => ':s3_domain_url',
+    :path => '/:class/:attachment/:id_partition/:style/:filename',
+    :s3_credentials => {
+      :bucket => ENV['enigmatic-journey-2353'],
+      :access_key_id => ENV['AKIAJ3DBQOYY7VDCAPQA'],
+      :secret_access_key => ENV['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']
+    }
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
